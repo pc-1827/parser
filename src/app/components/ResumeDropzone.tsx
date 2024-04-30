@@ -7,7 +7,6 @@ import {
   saveStateToLocalStorage,
 } from "lib/redux/local-storage";
 import { type ShowForm, initialSettings } from "lib/redux/settingsSlice";
-import { useRouter } from "next/navigation";
 import addPdfSrc from "public/assets/add-pdf.svg";
 import Image from "next/image";
 import { cx } from "lib/cx";
@@ -31,7 +30,6 @@ export const ResumeDropzone = ({
   const [file, setFile] = useState(defaultFileState);
   const [isHoveredOnDropzone, setIsHoveredOnDropzone] = useState(false);
   const [hasNonPdfFile, setHasNonPdfFile] = useState(false);
-  const router = useRouter();
 
   const hasFile = Boolean(file.name);
 
@@ -91,7 +89,6 @@ export const ResumeDropzone = ({
     }
 
     saveStateToLocalStorage({ resume, settings });
-    router.push("/resume-builder");
   };
 
   return (
