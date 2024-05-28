@@ -1,0 +1,5 @@
+camelot-py[cv]
+pandas
+pdf2image
+pillow
+pytesseract
